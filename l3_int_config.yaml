@@ -1,0 +1,9 @@
+---
+- name: Configure layer 3 interfaces
+  hosts: datacenter
+
+  tasks:
+    - name: Configure layer 3 interfaces    
+      eos_config:
+        src: templates/l3_interfaces.j2
+...
