@@ -1,0 +1,25 @@
+---
+ansible_host: 10.100.50.131
+ansible_network_os: eos
+
+l3_interfaces:
+  - name: Ethernet2
+    description: Link to Leaf1
+    ipv4: 172.16.36.5/31
+    enable: yes
+  - name: Ethernet3
+    description: Link to Leaf2
+    ipv4: 172.16.36.9/31
+    enable: yes
+  - name: Ethernet4
+    description: Link to Leaf4
+    ipv4: 172.16.36.13/31
+    enable: yes    
+  - name: Ethernet5
+    description: Link to Leaf5
+    ipv4: 172.16.36.17/31
+    enable: yes
+  - name: Loopback0
+    description: Loopback0
+    ipv4: 172.16.0.2/32 
+...

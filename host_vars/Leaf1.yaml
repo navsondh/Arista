@@ -1,0 +1,30 @@
+---
+ansible_host: 10.100.50.148
+ansible_network_os: eos
+
+l3_interfaces:
+  - name: Ethernet2
+    description: Link to Spine1
+    ipv4: 172.16.36.2/31
+    enable: yes
+  - name: Ethernet3
+    description: Link to Spine2
+    ipv4: 172.16.36.4/31
+    enable: yes
+  - name: Loopback0
+    description: Loopback0
+    ipv4: 172.16.0.3/32
+  - name: Loopback1
+    description: Loopback1
+    ipv4: 172.16.0.34/32
+
+mlag:
+  - vlan: 4094
+    domain_id: MLAGPEER
+    trunk_group: MLAGPEER
+    local_ip: 172.16.12.1/30
+    local_int: Vlan4094
+    peer_ip: 172.16.12.2
+    peer_link: Port-Channel10
+    
+...
