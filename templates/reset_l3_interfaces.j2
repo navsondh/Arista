@@ -1,0 +1,9 @@
+{% for int in l3_interfaces %}
+
+{% if int.enable is defined %}
+ default interface {{ int.name }}
+{% else %}
+ no interface {{ int.name }}
+{% endif %}
+ 
+{% endfor %}

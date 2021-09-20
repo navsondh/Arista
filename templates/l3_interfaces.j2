@@ -1,0 +1,11 @@
+{% for int in l3_interfaces %}
+
+interface {{ int.name }}
+ description {{ int.description }}
+{% if int.enable is defined %}
+ no switchport
+ no shutdown
+{% endif %}
+ ip address {{ int.ipv4 }}
+
+{% endfor %}
